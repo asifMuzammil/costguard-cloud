@@ -1,0 +1,49 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'CostGuard Cloud (AWS) - 1-Click Read-Only Audit Role for Cost & Waste Optimization'
+
+Parameters:
+  ExternalId:
+    Type: String
+    Description: 'Unique External ID provided by CostGuard Cloud for secure authentication'
+    Default: 'CostGuardAuditSession'
+  CostGuardAccountId:
+    Type: String
+    Description: 'The AWS Account ID hosting the CostGuard scanner service'
+    Default: '123456789012'
+
+Resources:
+  CostGuardReadOnlyRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: CostGuardCloudAuditRole
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              AWS: !Sub 'arn:aws:iam::${CostGuardAccountId}:root'
+            Action: 'sts:AssumeRole'
+            Condition:
+              StringEquals:
+                'sts:ExternalId': !Ref ExternalId
+      ManagedPolicyArns:
+        # Strictly Read-Only policies; cannot modify, create, or delete any resources!
+        - 'arn:aws:iam::aws:policy/SecurityAudit'
+      Policies:
+        - PolicyName: CostGuardCostExplorerRead
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - 'ce:GetCostAndUsage'
+                  - 'ce:GetDimensionValues'
+                  - 'ec2:Describe*'
+                  - 'ecr:Describe*'
+                  - 'cloudwatch:GetMetricStatistics'
+                Resource: '*'
+
+Outputs:
+  RoleArn:
+    Description: 'Copy this Role ARN and paste it into CostGuard Cloud'
+    Value: !GetAtt CostGuardReadOnlyRole.Arn

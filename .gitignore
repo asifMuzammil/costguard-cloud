@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+costguard-report/
+docker-test-output/
+output/
+.idea/
+.vscode/
+*.log

@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/costguard-banner.png" alt="CostGuard Cloud (AWS) - Zero-Knowledge AWS Zombie Resource Scanner" width="100%">
+</p>
+
 # CostGuard Cloud (AWS) 🛡️💰
 
 [![Docker Image](https://img.shields.io/badge/docker-ghcr.io%2Fasifmuzammil%2Fcostguard-blue?logo=docker&style=flat-square)](https://github.com/asifMuzammil/costguard-cloud/pkgs/container/costguard)

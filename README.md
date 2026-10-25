@@ -12,7 +12,7 @@
 > **Stop Silent AWS Waste in 30 Seconds.**  
 > CostGuard Cloud is a zero-knowledge, 100% read-only CLI & Docker tool that audits your AWS accounts for abandoned, idle, and zombie resources bleeding your monthly cloud budget.
 
-Developed by **[Asif Muzammil](https://github.com/asifMuzammil)** — AWS Community Builder (Containers).
+Developed by **[Asif Muzammil](https://github.com/asifMuzammil)** — AWS Community Builder (Containers) | AWS Certified Solutions Architect | CKAD (Certified Kubernetes Application Developer).
 
 ---
 
@@ -179,6 +179,6 @@ python3 -m costguard.cli --all-regions
 
 ## 🤝 Community & Support
 
-* **Author:** [Asif Muzammil](https://github.com/asifMuzammil) (AWS Community Builder - Containers)
+* **Author:** [Asif Muzammil](https://github.com/asifMuzammil) (AWS Community Builder - Containers | AWS Certified Solutions Architect | CKAD)
 * **Issues & Feedback:** Found a bug or want a new scanner (e.g. RDS idle instances, ALBs)? Open an [Issue](https://github.com/asifMuzammil/costguard-cloud/issues).
 * **Star the Repo:** If CostGuard saved your team money, please give the repo a ⭐ to help other AWS engineers discover it!

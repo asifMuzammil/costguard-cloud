@@ -212,7 +212,7 @@ def generate_html_report(scan_results: List[Dict[str, Any]], account_id: str, re
         <!-- Footer / Security Note -->
         <div class="pt-8 border-t border-slate-900 text-center text-xs text-slate-500 space-y-2">
             <p>🛡️ CostGuard Cloud does not delete or modify your infrastructure. All remediations are suggested for review.</p>
-            <p class="text-slate-600">Built for the AWS Community by <span class="text-slate-400 font-medium">Asif Muzammil</span> (AWS Community Builder). Open-source & zero-telemetry.</p>
+            <p class="text-slate-600">Built for the AWS Community by <span class="text-slate-400 font-medium">Asif Muzammil</span> (AWS Community Builder | AWS Solutions Architect | CKAD). Open-source & zero-telemetry.</p>
         </div>
 
     </div>

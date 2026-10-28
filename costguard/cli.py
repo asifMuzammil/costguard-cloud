@@ -78,6 +78,12 @@ def run_scan(regions: List[str] = None, profile: str = None, output_dir: str = N
 
 
 def main():
+    # Support optional 'scan' subcommand (e.g. 'costguard scan' or 'docker run ... scan')
+    if len(sys.argv) > 1 and sys.argv[1] == "scan":
+        sys.argv.pop(1)
+    elif "scan" in sys.argv:
+        sys.argv.remove("scan")
+
     parser = argparse.ArgumentParser(
         description="CostGuard Cloud (AWS) - 60-Second Zombie Resource & Cloud Waste Scanner"
     )

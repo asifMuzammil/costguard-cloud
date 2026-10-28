@@ -72,7 +72,13 @@ def run_scan(regions: List[str] = None, profile: str = None, output_dir: str = N
             html_path = os.path.join(output_dir, "index.html")
             with open(html_path, "w", encoding="utf-8") as f:
                 f.write(html_content)
-            print(f"📁 Detailed Interactive HTML Report generated at:\n   {os.path.abspath(html_path)}\n")
+
+            display_path = "./costguard-report/index.html" if output_dir == "/app/output" else os.path.abspath(html_path)
+            print("📁 Detailed Interactive HTML Report generated successfully!")
+            print(f"   Saved to: {display_path} (in your local directory)\n")
+            print("👉 To view the report in your browser:")
+            print("   • Double-click 'costguard-report/index.html' in your file manager")
+            print("   • Or run: xdg-open ./costguard-report/index.html\n")
         except Exception as e:
             print(f"⚠️ Warning: Could not save HTML report ({e})")
 
